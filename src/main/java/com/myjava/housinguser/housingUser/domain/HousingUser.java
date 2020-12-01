@@ -4,16 +4,14 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.myjava.housinguser.housingUser.web.model.CustomerLevel;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,8 +36,12 @@ public class HousingUser {
 	private String userName;
 	
 	private String userPwd; 
-	private	String customerLevel; 
-	private UUID userAddressId;
+	private	String customerLevel;
+	
+	
+	@OneToOne(targetEntity = HousingUserAddress.class, fetch = FetchType.EAGER)
+	@JoinColumn(nullable = false, name = "user_id")
+	private HousingUserAddress userAddress;
 	
 	private OffsetDateTime createdDate;
 	
