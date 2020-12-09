@@ -1,4 +1,4 @@
-package com.myjava.housinguser.housingUser;
+package com.myjava.housinguser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

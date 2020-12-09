@@ -1,4 +1,4 @@
-package com.myjava.housinguser.housingUser.web.model;
+package com.myjava.housinguser.web.model;
 
 public enum CustomerLevel {
 	WRITER,

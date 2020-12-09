@@ -1,15 +1,15 @@
-package com.myjava.housinguser.housingUser.web.service;
+package com.myjava.housinguser.web.service;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.myjava.housinguser.housingUser.domain.HousingUser;
-import com.myjava.housinguser.housingUser.domain.HousingUserAddress;
-import com.myjava.housinguser.housingUser.repositories.UserRepository;
-import com.myjava.housinguser.housingUser.web.mappers.UserMapper;
-import com.myjava.housinguser.housingUser.web.model.HousingUserDto;
+import com.myjava.housinguser.domain.HousingUser;
+import com.myjava.housinguser.domain.HousingUserAddress;
+import com.myjava.housinguser.repositories.UserRepository;
+import com.myjava.housinguser.web.mappers.HousingUserMapper;
+import com.myjava.housinguser.web.model.HousingUserDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +19,9 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class HousingUserServiceImpl implements HousingUserService{
 
-	private final UserMapper mapper;
+	private final HousingUserMapper mapper;
 	private final UserRepository repository;
+
 	
 	@Override
 	public HousingUserDto getById(UUID userId) {

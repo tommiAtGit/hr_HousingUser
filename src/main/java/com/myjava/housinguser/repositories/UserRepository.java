@@ -1,11 +1,11 @@
-package com.myjava.housinguser.housingUser.repositories;
+package com.myjava.housinguser.repositories;
 
 import java.util.UUID;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.myjava.housinguser.housingUser.domain.HousingUser;
+import com.myjava.housinguser.domain.HousingUser;
 
 	@Repository
 	public interface UserRepository extends CrudRepository<HousingUser, UUID> {

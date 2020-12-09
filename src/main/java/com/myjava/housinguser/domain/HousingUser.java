@@ -1,4 +1,4 @@
-package com.myjava.housinguser.housingUser.domain;
+package com.myjava.housinguser.domain;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -40,7 +40,7 @@ public class HousingUser {
 	
 	
 	@OneToOne(targetEntity = HousingUserAddress.class, fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false, name = "user_id")
+	@JoinColumn(nullable = false, name = "id")
 	private HousingUserAddress userAddress;
 	
 	private OffsetDateTime createdDate;

@@ -1,8 +1,8 @@
-package com.myjava.housinguser.housingUser.web.service;
+package com.myjava.housinguser.web.service;
 
 import java.util.UUID;
 
-import com.myjava.housinguser.housingUser.web.model.HousingUserDto;
+import com.myjava.housinguser.web.model.HousingUserDto;
 
 public interface HousingUserService {
 	

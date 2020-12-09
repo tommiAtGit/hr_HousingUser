@@ -1,4 +1,4 @@
-package com.myjava.housinguser.housingUser.web.controller;
+package com.myjava.housinguser.web.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myjava.housinguser.housingUser.web.model.HousingUserDto;
-import com.myjava.housinguser.housingUser.web.service.HousingUserService;
+import com.myjava.housinguser.web.model.HousingUserDto;
+import com.myjava.housinguser.web.service.HousingUserService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
