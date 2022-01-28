@@ -31,6 +31,7 @@ public class HousingUserController {
 		return new ResponseEntity<HousingUserDto>(housingUserService.getByUserName(username),HttpStatus.OK);
 	}
 	
+	
 	@PostMapping
 	public ResponseEntity<HousingUserDto>saveHousingUser( @Validated @RequestBody HousingUserDto hcUDto){
 		

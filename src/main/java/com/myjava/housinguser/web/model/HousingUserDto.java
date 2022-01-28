@@ -1,5 +1,6 @@
 package com.myjava.housinguser.web.model;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -19,20 +20,22 @@ import lombok.NoArgsConstructor;
 @Builder
 public class HousingUserDto {
 	
-	@Null
+	@NotNull
 	private UUID id;
 	@NotNull
 	private String userName;
 	@NotNull
 	private String userPwd; 
 	
-	private	CustomerLevel customerLevel; 
+	//private	CustomerLevel customerLevel; 
 	
-	private HousingUserAddressDto userAddress;
-	@Null
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss2",shape=JsonFormat.Shape.STRING)
-	private OffsetDateTime createdDate;
+	private HousingUserAddressDto userAddressDto;
 	
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss2",shape=JsonFormat.Shape.STRING)
-	private OffsetDateTime lastLoginDate;
+//	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",shape=JsonFormat.Shape.STRING)
+//	private LocalDateTime createdDate;
+//	
+//	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",shape=JsonFormat.Shape.STRING)
+//	private LocalDateTime lastLoginDate;
+	
+	
 }

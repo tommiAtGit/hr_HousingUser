@@ -6,7 +6,7 @@ import com.myjava.housinguser.web.model.HousingUserDto;
 
 public interface HousingUserService {
 	
-	HousingUserDto getById(UUID userId);
+	HousingUserDto getById(String userId);
 	HousingUserDto getByUserName(String username);
 	HousingUserDto saveHousingUser(HousingUserDto userDto);
 	HousingUserDto updateHousingUser(UUID id, HousingUserDto userDto);

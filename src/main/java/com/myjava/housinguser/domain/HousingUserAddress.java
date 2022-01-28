@@ -1,6 +1,5 @@
 package com.myjava.housinguser.domain;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -28,16 +27,16 @@ public class HousingUserAddress {
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(length = 16, columnDefinition = "BINARY(16)", updatable = false, nullable = false)
 	private UUID id;
-	
-	private String FirstName;
-	
-	private String LastName;
-	
+	@Column(name = "firstname")
+	private String firstName;
+	@Column(name = "lastname")
+	private String lastName;
+	@Column(name = "email")
 	private String eMail;
-	
-	private String PhoneNumber;
-	
-	private OffsetDateTime createdDate;
+	@Column(name = "phonenumber")
+	private String phoneNumber;
+//	@Column(name = "CreatedDate")
+//	private LocalDateTime createdDate;
 	
 
 }

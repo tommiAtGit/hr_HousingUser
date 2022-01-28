@@ -24,12 +24,12 @@ public class HousingUserServiceImpl implements HousingUserService{
 
 	
 	@Override
-	public HousingUserDto getById(UUID userId) {
+	public HousingUserDto getById(String userId) {
 		
 		List<HousingUser> users = (List<HousingUser>) repository.findAll();
 		
 		for (HousingUser housingUser : users) {
-			if (housingUser.getId().equals(userId)) {
+			if (housingUser.getId().toString().equals(userId)) {
 				return mapper.HousingUsertoDto(housingUser);
 			}
 		}
@@ -66,13 +66,13 @@ public class HousingUserServiceImpl implements HousingUserService{
 	public HousingUserDto updateHousingUser(UUID id, HousingUserDto userDto) {
 		if (userDto != null) {
 			HousingUser hU = repository.findById(id).orElseThrow();
-			hU.setCustomerLevel(userDto.getCustomerLevel().name());
+			//hU.setCustomerLevel(userDto.getCustomerLevel().name());
 			HousingUserAddress userAddress = HousingUserAddress.builder()
-					.id(userDto.getUserAddress().getId())
-					.FirstName(userDto.getUserAddress().getFirstName())
-					.LastName(userDto.getUserAddress().getLastName())
-					.eMail(userDto.getUserAddress().getEMail())
-					.PhoneNumber(userDto.getUserAddress().getPhoneNumber())
+					.id(userDto.getUserAddressDto().getId())
+					.firstName(userDto.getUserAddressDto().getFirstName())
+					.lastName(userDto.getUserAddressDto().getLastName())
+					.eMail(userDto.getUserAddressDto().getEMail())
+					.phoneNumber(userDto.getUserAddressDto().getPhoneNumber())
 					.build();
 			hU.setUserAddress(userAddress);
 			hU.setUserName(userDto.getUserName());

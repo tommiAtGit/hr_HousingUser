@@ -1,8 +1,8 @@
 package com.myjava.housinguser.domain;
 
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -32,19 +33,19 @@ public class HousingUser {
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(length = 16, columnDefinition = "BINARY(16)", updatable = false, nullable = false)
 	private UUID id;
-	
+	@Column(name = "username")
 	private String userName;
-	
-	private String userPwd; 
-	private	String customerLevel;
-	
-	
-	@OneToOne(targetEntity = HousingUserAddress.class, fetch = FetchType.EAGER)
+	@Column(name = "password")
+	private String userPwd;
+	//@Column(name = "CustomerLevel")
+	//private	String  customerLevel;
+	//@Column(name = "UserAddress")
+	@OneToOne(targetEntity = HousingUserAddress.class, fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(nullable = false, name = "id")
 	private HousingUserAddress userAddress;
-	
-	private OffsetDateTime createdDate;
-	
-	private OffsetDateTime lastLoginDate;
+//	@Column(name = "CreateDate")
+//	private LocalDateTime createdDate;
+//	@Column(name = "LastLoginDate")
+//	private LocalDateTime lastLoginDate;
 
 }
