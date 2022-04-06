@@ -1,4 +1,4 @@
-USE housinguserdb;
+USE hc_userdb;
 DROP TABLE IF EXISTS housing_user;
 DROP TABLE IF EXISTS housing_user_address;
 
